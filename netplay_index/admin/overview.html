@@ -1,27 +1,27 @@
 {% extends "../base.html" %}
-{% block title %}Admin Panel{% end %}
+{% block title %}管理面板{% end %}
 {% block content %}
-  <h3>Welcome, {{ username }}!</h3>
+  <h3>欢迎, {{ username }}!</h3>
 
   <p>
-    There {% if session_count == 1 %}is{% else %}are{% end %} currently <code>{{ session_count }}</code> active session{% if session_count != 1 %}s{% end %} with <code>{{ total_player_count }}</code> active player{% if total_player_count != 1 %}s{% end %}.
+    当前共有 <code>{{ session_count }}</code> 个活动会话，以及 <code>{{ total_player_count }}</code> 位活跃玩家。
 
-    This index has been up since <code>{{ start_time }}</code> and has hosted <code>{{ total_session_count }}</code> session{% if total_session_count != 1 %}s{% end %} since.
+    本索引服务器自 <code>{{ start_time }}</code> 启动以来，已承载过 <code>{{ total_session_count }}</code> 个会话。
   </p>
 
-  Actions:
+  操作:
   <ul>
     <li>
-      <a href="/admin/server_list">Server List</a> - Look at and remove individual sessions
+      <a href="/admin/server_list">服务器列表</a> - 查看并移除各个会话
     </li>
     <li>
-      <a href="/admin/bans">Banned Hosts</a> - Review and remove banned hosts
+      <a href="/admin/bans">封禁主机列表</a> -审查并移除被封禁的主机
     </li>
     <li>
-      <a href="/admin/blacklist">Blacklist</a> - Blacklist certain words from being used
+      <a href="/admin/blacklist">黑名单</a> - 将特定词语列入黑名单以禁止使用
     </li>
     <li>
-      <a href="/admin/user_management">User Management</a> - Change passwords, add and remove users
+      <a href="/admin/user_management">用户管理</a> - 修改密码、添加和移除用户
     </li>
   </ul>
 {% end %}

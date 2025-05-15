@@ -1,16 +1,16 @@
 {% extends "../base.html" %}
-{% block title %}Server List{% end %}
+{% block title %}服务器列表{% end %}
 {% block content %}
 <table class="table table-striped">
   <thead class="thead-light">
     <tr>
-      <th>Region</th>
-      <th>Name</th>
-      <th>Game</th>
-      <th>Has Password?</th>
-      <th>Players</th>
-      <th>Version</th>
-      <th>Host</th>
+      <th>地区</th>
+      <th>名称</th>
+      <th>游戏</th>
+      <th>有密码?</th>
+      <th>玩家数</th>
+      <th>版本</th>
+      <th>主机</th>
       <th></th>
     </tr>
   </thead>
@@ -28,9 +28,9 @@
       </td>
       <td>
         {% if sessions[session]['password'] %}
-        Yes
+        是
         {% else %}
-        No
+        否
         {% end %}
       </td>
       <td>
@@ -50,7 +50,7 @@
           {% module xsrf_form_html() %}
           <input hidden type="text" name="action" value="session_remove"></input>
           <input hidden type="text" name="secret" value="{{ session }}"></input>
-          <input type="submit" class="btn btn-danger" value="Remove"></input>
+          <input type="submit" class="btn btn-danger" value="移除"></input>
         </form>
       </td>
     </tr>

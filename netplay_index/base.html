@@ -11,7 +11,7 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>{% block title %}NetPlay Index{% end %}</title>
+  <title>{% block title %}NetPlay 索引{% end %}</title>
 
   <!-- jQuery -->
   <script src="/static/thirdparty/jquery-3.3.1.min.js"></script>
@@ -31,30 +31,30 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/admin/overview">NetPlay Index</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="/admin/overview">NetPlay 索引</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="导航切换">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item {% if globals().get('view', None) == 'server_list' %} active {% end %}">
-          <a class="nav-link" href="/admin/server_list">Servers</a>
+          <a class="nav-link" href="/admin/server_list">服务器列表</a>
         </li>
         <li class="nav-item {% if globals().get('view', None) == 'blacklist' %} active {% end %}">
-          <a class="nav-link" href="/admin/blacklist">Blacklist</a>
+          <a class="nav-link" href="/admin/blacklist">黑名单</a>
         </li>
         <li class="nav-item {% if globals().get('view', None) == 'bans' %} active {% end %}">
-          <a class="nav-link" href="/admin/bans">Banlist</a>
+          <a class="nav-link" href="/admin/bans">封禁列表</a>
         </li>
         <li class="nav-item {% if globals().get('view', None) == 'user_management' %} active {% end %}">
-          <a class="nav-link" href="/admin/user_management">Users</a>
+          <a class="nav-link" href="/admin/user_management">用户管理</a>
         </li>
       </ul>
       {% if globals().get('username', None) %}
       <form method="POST" class="form-inline  my-2 my-lg-0" action="/logout">
         {% module xsrf_form_html() %}
-        <span id="logged-in" class="navbar-text">Logged in as {{ username }}</span>
-        <input type="submit" style="margin-left: 10px" class="btn btn-primary my-2 my-sm-0" value="Logout"></input>
+        <span id="logged-in" class="navbar-text">当前登录用户: {{ username }}</span>
+        <input type="submit" style="margin-left: 10px" class="btn btn-primary my-2 my-sm-0" value="登出"></input>
       </form>
       {% end %}
     </div>
