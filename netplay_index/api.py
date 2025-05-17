@@ -208,6 +208,12 @@ class Handler(RequestHandler):
             self.set_status(400)
             return
 
+        # 将region字段替换为基于索引的编号（从1开始）
+        for i, session in enumerate(filtered_sessions):
+            # 保留原始region值的副本（可选）
+            # session['original_region'] = session['region']
+            session['region'] = str(i + 1)
+
         self.write({"status": "OK", "sessions": filtered_sessions})
 
     def get(self, api_version, action):
